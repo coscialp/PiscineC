@@ -1,0 +1,8 @@
+Credentials cache: API:57462
+        Principal: coscialp@LE-101.FR
+
+		  Issued                Expires               Principal
+		  Jul  1 10:36:38 2019  Jul  1 20:36:38 2019  krbtgt/LE-101.FR@LE-101.FR
+		  Jul  1 10:36:40 2019  Jul  1 20:36:38 2019  ldap/ldap-master.le-101.fr@LE-101.FR
+		  Jul  1 10:36:40 2019  Jul  1 20:36:38 2019  HTTP/san-ssd.le-101.fr@LE-101.FR
+		  Jul  1 10:45:43 2019  Jul  1 20:36:38 2019  host/vogsphere.le-101.fr@LE-101.FR

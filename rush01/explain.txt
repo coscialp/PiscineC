@@ -1,0 +1,210 @@
+# **************************************************************************** #
+#                                                           LE - /             #
+#                                                               /              #
+#    explain.txt                                      .::    .:/ .      .::    #
+#                                                  +:+:+   +:    +:  +:+:+     #
+#    By: coscialp <marvin@le-101.fr>                +:+   +:    +:    +:+      #
+#                                                  #+#   #+    #+    #+#       #
+#    Created: 2019/07/13 11:40:16 by coscialp     #+#   ##    ##    #+#        #
+#    Updated: 2019/07/14 17:59:14 by coscialp    ###    #+. /#+    ###.fr      #
+#                                                          /                   #
+#                                                         /                    #
+#******************************************************************************#
+
+Definition d'un tableau  1 dimensions :
+	
+	int 	*tab;
+	tab = (int *)malloc(sizeof(int) * 16);
+	
+	Prototype de malloc :
+		
+		void 	*malloc(int size);
+
+				////////M E M O///////
+				//	char = 1oct     //
+				//	int = 4oct;     //
+				//////////////////////
+
+	Securiser un malloc :
+
+		if (!(((tab = (int *)malloc(16 * sizeof(int))))))
+			return (0);
+
+#*******************************************************************************#
+
+Tableau differente possibilite de resolution :
+
+		4  |  1    2    3    4  |  1
+		----------------------------                  
+		3  |  1    3    2    4  |  1
+		3  |  2    1    3    4  |  1
+		3  |  2    3    1    4  |  1
+		----------------------------                    
+		3  |  1    3    4    2  |  2
+		3  |  1    2    4    3  |  2
+		3  |  2    3    4    1  |  2
+		----------------------------                    
+		2  |  3    1    2    4  |  1
+		2  |  3    2    1    4  |  1
+		----------------------------                    
+		2  |  3    2    4    1  |  2
+		2  |  3    1    4    2  |  2
+		2  |  3    4    1    2  |  2
+		2  |  2    1    4    3  |  2
+		2  |  2    4    1    3  |  2
+		2  |  1    4    2    3  |  2
+		----------------------------                    
+		1  |  4    2    1    3  |  2
+		1  |  4    1    2    3  |  2
+		----------------------------                    
+		2  |  2    4    3    1  |  3
+		2  |  3    4    2    1  |  3
+		2  |  1    4    3    2  |  3
+		----------------------------                    
+		1  |  4    2    3    1  |  3
+		1  |  4    3    1    2  |  3
+		1  |  4    1    3    2  |  3
+		----------------------------                    
+		1  |  4    3    2    1  |  4	
+
+#******************************************************************************#
+char to int :
+	
+	char = int + '0';
+
+int	to char :
+	
+	int = char - '0';
+
+#******************************************************************************#
+
+Tableau des positions :
+
+      |	  0    |     1    |    2     |    3	    |
+   ---|--------|----------|----------|----------|-----     
+	8 |    0   |     1    |    2     |    3     |  12
+   ---|--------|----------|----------|----------|----- 
+	9 |    4   |     5    |    6     |     7    |  13
+   ---|--------|----------|----------|----------|-----
+   10 |    8   |     9    |    10    |    11    |  14
+   ---|--------|----------|----------|----------|-----
+   11 |   12   |    13    |    14    |    15    |  15
+   ---|--------|----------|----------|----------|-----
+	  |    4   |     5    |    6     |     7    |
+	 
+#******************************************************************************#
+Squelette du rush :
+	
+	void	rush01(char *str);
+
+	exec. ./rush-01 "4 2 3 1 1 3 2 2 ... 1"
+
+Fonction check parametre :
+
+	int		ft_check_params(char *str)
+	{	
+			declaration & initialisation INDEX
+			
+			TQ (1 <= str[i] <= 4 OU ' ' ET str[i] != '\0')
+				index++
+			SI (str == '\0' ET index == 31
+				return VALID(1)
+			return ERROR(0)
+	}
+
+
+Fonction str sans espace :
+	
+	char	*ft_str_without_space(char *str)
+	{
+		Declaration *str_s
+		Declaration i, j = 0
+
+		TQ str[i] != '\0'
+			{
+				SI i % 2 == 0 
+					SI 1 <= str <= 4
+						str_s[j] = str[i]
+						j ET i ++
+					SINON 
+						return ERROR
+
+				SI i % 2 == 1
+					SI str == ' '
+						i++
+					SINON
+						return ERROR
+			}
+			return STR_S
+	}
+
+Fonction Initialisation tableau :
+
+	void	ft_init_tab(int *tab)
+	{
+		Declaration i = 0;
+		
+		if(((tab = ((int)malloc((sizeof(int) * 16)))))
+			return ;
+		TQ (i < 16)
+		{
+			tab[i] = 0;
+			i++;	
+		}
+	}
+
+Fonction Colonne :
+
+	int		ft_colum_test(char *str)
+	{
+		Declaration i = 0;
+
+		TQ (i < 4)
+		{
+			SI str[i] == 4 && str[i + 4] != 1
+				return ERROR
+			SINON SI str[i] == 3 && (str[i + 4] != 2 OU != 1)
+				return ERROR
+			SINON SI str[i] == 2 && str[i + 4] == 4
+				return ERROR
+			i++;
+		}
+	}
+
+Fonction test ligne :
+
+	int		ft_check_line(char *str)
+	{
+		Declaration i = 8;
+
+		TQ (i < 12)
+		{
+			SI str[i] == 4 && str[i + 4] != 1
+				return ERROR
+			SINON SI str[i] == 3 && (str[i + 4] != 2 OU != 1)
+				return ERROR
+			SINON SI str[i] == 2 && str[i + 4] == 4
+				return ERROR
+			i++;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
