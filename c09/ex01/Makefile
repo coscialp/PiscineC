@@ -3,10 +3,10 @@
 #                                                               /              #
 #    Makefile                                         .::    .:/ .      .::    #
 #                                                  +:+:+   +:    +:  +:+:+     #
-#    By: coscialp <marvin@le-101.fr>                +:+   +:    +:    +:+      #
+#    By: coscialp <coscialp@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/07/18 00:50:06 by coscialp     #+#   ##    ##    #+#        #
-#    Updated: 2019/07/19 11:14:23 by coscialp    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/10/12 14:01:12 by coscialp    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -33,7 +33,7 @@ ${NAME}:	${OBJS}
 clean:
 			rm -f ${OBJS}
 
-fclean:	clean
+fclean:		clean
 			rm -f ${NAME}
 
 re:			fclean all
